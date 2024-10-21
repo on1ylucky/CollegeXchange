@@ -9,30 +9,42 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="messaging.html">Messages</a></li>
-                <li><a href="suggestions.html">Post a Question</a></li> <!-- Updated name -->
-            </ul>
+            <div class="logo">
+                <h1>CollegeXchange</h1> <!-- Logo on the left side -->
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="messaging.html">Messages</a></li>
+                    <li><a href="suggestions.html">Post a Question</a></li>
+                </ul>
+                <!-- Profile icon at the far right -->
+                <div class="profile-icon">
+                    <a href="profile.html"><img src="person-icon.png" alt="Profile" style="width: 30px;"></a>
+                </div>
+            </div>
         </nav>
-        <h1>Post a Question</h1> <!-- Updated name -->
-        <p>Ask for advice on professors for specific classes and share your suggestions with others.</p>
     </header>
 
     <section>
-        <h2>Post a Question</h2> <!-- Updated name -->
-        <textarea id="questionContent" placeholder="Ask about a professor for a specific class..." rows="4" style="width:80%; padding:10px; border-radius:10px;"></textarea>
+        <h2>Post a Question or Suggestion</h2>
+        <textarea id="questionContent" placeholder="Ask a question or give advice..." rows="4" style="width: 80%; padding: 10px;"></textarea>
         <br><br>
-        <button onclick="postQuestion()">Submit Question</button>
+        <button onclick="postQuestion()">Submit</button>
     </section>
 
     <section>
-        <h2>Questions and Suggestions</h2>
+        <h2>Community Posts</h2>
         <div id="questionContainer">
-            <!-- Questions and suggestions will appear here -->
+            <!-- Questions and comments will appear here -->
         </div>
     </section>
+
+    <!-- Floating login button -->
+    <div class="floating-login">
+        <button onclick="location.href='login.html';">Login</button>
+    </div>
 
     <footer>
         <p>&copy; 2024 CollegeXchange</p>
@@ -45,14 +57,41 @@
             if (questionContent.trim() !== "") {
                 var questionContainer = document.getElementById('questionContainer');
 
-                // Create a new div to hold the question and responses
+                // Create a new question div
                 var newQuestion = document.createElement('div');
                 newQuestion.className = "question-bubble";
 
-                // Add the question content to the new div
-                newQuestion.innerHTML = `<p>${questionContent}</p><button onclick="addSuggestion(this)">Add a Suggestion</button><div class="suggestionContainer"></div>`;
+                newQuestion.innerHTML = `
+                    <p>${questionContent}</p>
+                    <button onclick="addComment(this)">Add a Comment</button>
+                    <div class="comments"></div>
+                `;
 
-                // Append the question to the question container
+                // Append the question to the container
                 questionContainer.prepend(newQuestion);
 
-                // 
+                // Clear the input field after posting
+                document.getElementById('questionContent').value = '';
+            } else {
+                alert("Please enter a question or suggestion.");
+            }
+        }
+
+        function addComment(button) {
+            var commentText = prompt("Enter your comment:");
+
+            if (commentText.trim() !== "") {
+                var commentContainer = button.nextElementSibling;
+
+                // Create a new comment div
+                var newComment = document.createElement('div');
+                newComment.className = "comment-bubble";
+                newComment.innerHTML = `<p>${commentText}</p>`;
+
+                // Append the comment to the comment container
+                commentContainer.appendChild(newComment);
+            }
+        }
+    </script>
+</body>
+</html>
