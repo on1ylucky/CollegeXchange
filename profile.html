@@ -9,49 +9,60 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="messaging.html">Messages</a></li>
-                <li><a href="suggestions.html">Post a Question</a></li>
-            </ul>
+            <div class="nav-container">
+                <div class="nav-left">
+                    <div class="logo">
+                        <h1>CollegeXchange</h1>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="messaging.html">Messages</a></li>
+                        <li><a href="suggestions.html">Post a Question</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-right">
+                    <button onclick="location.href='login.html';">Login</button>
+                </div>
+            </div>
         </nav>
-        <h1>Your Profile</h1>
     </header>
 
-    <section>
-        <h2>Welcome, <span id="userEmail"></span></h2>
-        <button onclick="logout()">Log Out</button>
+    <section class="profile-section">
+        <h2>Profile: Jane Doe</h2>
+        <div class="profile-details">
+            <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+                <p><strong>Classification:</strong> Junior</p>
+                <p><strong>Major:</strong> Computer Science</p>
+                <p><strong>Clubs:</strong> Cybersecurity Club, Women in STEM, ISACA</p>
+                <p><strong>Bio:</strong> Passionate about technology and helping others understand the importance of cybersecurity. I love coding, gaming, and learning about new security technologies!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="profile-posts">
+        <h3>My Posts</h3>
+
+        <!-- Post example 1 -->
+        <div class="post">
+            <h4>Post Title: "Selling My Old Laptop"</h4>
+            <p><strong>Date:</strong> October 12, 2024</p>
+            <p>I'm selling my 2019 MacBook Pro! It's in great condition and comes with the original charger. I'm asking for $800, but the price is negotiable.</p>
+        </div>
+
+        <!-- Post example 2 -->
+        <div class="post">
+            <h4>Post Title: "Advice on Taking IS 340"</h4>
+            <p><strong>Date:</strong> September 28, 2024</p>
+            <p>For anyone taking IS 340 (Database Management), I recommend starting your projects early! Dr. Smith’s class can be intense, but it’s really rewarding if you put in the work.</p>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 CollegeXchange</p>
     </footer>
-
-    <script>
-        // Check if the user is logged in
-        function checkLogin() {
-            var isLoggedIn = localStorage.getItem('isLoggedIn');
-            var userEmail = localStorage.getItem('userEmail');
-
-            if (isLoggedIn) {
-                // Display the user's email
-                document.getElementById('userEmail').textContent = userEmail;
-            } else {
-                // Redirect to login page if not logged in
-                window.location.href = "login.html";
-            }
-        }
-
-        // Log out function
-        function logout() {
-            localStorage.removeItem('isLoggedIn');
-            localStorage.removeItem('userEmail');
-            window.location.href = "login.html";
-        }
-
-        // Run checkLogin on page load
-        window.onload = checkLogin;
-    </script>
 </body>
 </html>
