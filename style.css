@@ -23,71 +23,61 @@ header {
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Align everything to the right */
     width: 90%;
     max-width: 1200px;
     align-items: center;
 }
 
-/* Left-side navigation */
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 30px; /* Add space between logo and navigation buttons */
-}
-
-/* Logo Styling */
-.logo h1 {
+/* Left-side (Logo) - remains on the left */
+.logo {
+    margin-right: auto;
+    color: white;
     font-size: 2rem;
-    margin-right: 40px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: white;
 }
 
 /* Navigation Bar Styling */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px; /* Add spacing between navigation buttons */
     padding: 0;
     margin: 0;
+    gap: 20px; /* Space between buttons */
 }
 
 nav ul li {
     margin: 0;
 }
 
-nav ul li a {
+nav ul li a, .nav-right button {
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
-    padding: 10px 30px; /* Increase padding for better spacing */
+    padding: 10px 30px; /* Uniform button size */
     background-color: #6DA6E0; /* Uniform blue color for all buttons */
     border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    width: 150px; /* Fixed width for all buttons to be uniform */
+    text-align: center;
 }
 
-nav ul li a:hover {
-    background-color: #ADDFFF; /* Hover effect */
+nav ul li a:hover, .nav-right button:hover {
+    background-color: #ADDFFF;
     color: #3E4A89;
     transform: scale(1.05);
 }
 
 /* Right-side login button */
-.nav-right {
-    margin-left: auto;
-}
-
 .nav-right button {
     background-color: #6DA6E0; /* Same blue as other buttons */
     color: white;
     border: none;
-    padding: 10px 30px; /* Increased padding for better spacing */
-    border-radius: 25px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
