@@ -9,28 +9,39 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="messaging.html">Messages</a></li> <!-- Link to messaging.html -->
-                <li><a href="suggestions.html">Post a Question</a></li>
-            </ul>
+            <div class="logo">
+                <h1>CollegeXchange</h1> <!-- Logo on the left side -->
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="messaging.html">Messages</a></li>
+                    <li><a href="suggestions.html">Post a Question</a></li>
+                </ul>
+                <!-- Profile icon at the far right -->
+                <div class="profile-icon">
+                    <a href="profile.html"><img src="person-icon.png" alt="Profile" style="width: 30px;"></a>
+                </div>
+            </div>
         </nav>
-        <h1>Messages</h1>
     </header>
 
     <section>
-        <h2>Connect with Alumni and Peers</h2>
-        <p>Start conversations with alumni or peers to get advice on college life, coursework, or career tips.</p>
-
+        <h2>Chat with Alumni or Peers</h2>
         <div class="chat-window" id="chat-window">
             <h3>Chat with John Doe (Alumni)</h3>
             <p><strong>John:</strong> Hi! How can I help you with your career plans?</p>
         </div>
 
-        <input type="text" id="messageInput" placeholder="Type your message..." style="width: 80%; padding: 10px; margin-top: 10px; border-radius: 10px;">
+        <input type="text" id="messageInput" placeholder="Type your message..." style="width: 80%; padding: 10px;">
         <button onclick="sendMessage()">Send</button>
     </section>
+
+    <!-- Floating login button -->
+    <div class="floating-login">
+        <button onclick="location.href='login.html';">Login</button>
+    </div>
 
     <footer>
         <p>&copy; 2024 CollegeXchange</p>
@@ -42,5 +53,18 @@
 
             if (messageInput.trim() !== "") {
                 var chatWindow = document.getElementById('chat-window');
+
+                var newMessage
                 var newMessage = document.createElement('p');
-                newMessage.innerHTML = "<strong>You:</strong> " + messageInput
+                newMessage.innerHTML = "<strong>You:</strong> " + messageInput;
+
+                // Append the new message to the chat window
+                chatWindow.appendChild(newMessage);
+
+                // Clear the input field after sending the message
+                document.getElementById('messageInput').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
