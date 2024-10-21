@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeXchange - Tips & Tricks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="messaging.html">Messaging Platform</a></li>
+                <li><a href="blog.html">Tips & Tricks</a></li>
+            </ul>
+        </nav>
+        <h1>Tips & Tricks</h1>
+        <p>Share your tips, tricks, and advice with fellow students</p>
+    </header>
+
+    <section>
+        <h2>Post a Tip</h2>
+        <textarea id="postContent" placeholder="Share your tips or tricks..." rows="5" style="width:80%; padding:10px; border-radius:10px;"></textarea>
+        <br><br>
+        <button onclick="submitPost()">Submit Post</button>
+    </section>
+
+    <section>
+        <h2>Community Tips</h2>
+        <div id="postContainer">
+            <!-- Submitted posts will appear here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CollegeXchange</p>
+    </footer>
+
+    <script>
+        function submitPost() {
+            var postContent = document.getElementById('postContent').value;
+            if (postContent.trim() !== "") {
+                var postContainer = document.getElementById('postContainer');
+
+                // Create new post element
+                var newPost = document.createElement('div');
+                newPost.className = "post";
+                newPost.innerHTML = `<p>${postContent}</p><p><em>Posted by: Anonymous</em></p>`;
+
+                // Append the post to the container
+                postContainer.prepend(newPost);
+
+                // Clear the input field
+                document.getElementById('postContent').value = "";
+            }
+        }
+    </script>
+</body>
+</html>
