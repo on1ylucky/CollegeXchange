@@ -9,19 +9,22 @@
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <h1>CollegeXchange</h1> <!-- Logo on the left side -->
-            </div>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="messaging.html">Messages</a></li>
-                    <li><a href="suggestions.html">Post a Question</a></li>
-                </ul>
-                <!-- Profile icon at the far right -->
-                <div class="profile-icon">
-                    <a href="profile.html"><img src="person-icon.png" alt="Profile" style="width: 30px;"></a>
+            <div class="nav-container">
+                <div class="nav-left">
+                    <div class="logo">
+                        <h1>CollegeXchange</h1>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="messaging.html">Messages</a></li>
+                        <li><a href="suggestions.html">Post a Question</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-right">
+                    <button onclick="location.href='login.html';">Login</button>
                 </div>
             </div>
         </nav>
@@ -37,14 +40,25 @@
     <section>
         <h2>Community Posts</h2>
         <div id="questionContainer">
-            <!-- Questions and comments will appear here -->
+            <!-- Example posts -->
+            <div class="question-bubble">
+                <p><strong>John Doe:</strong> Does anyone have tips for surviving finals week?</p>
+                <div class="comments">
+                    <p><strong>Sarah:</strong> Make sure to take breaks and get plenty of sleep!</p>
+                    <p><strong>James:</strong> Use flashcards for studying, it helps a lot!</p>
+                </div>
+                <button onclick="addComment(this)">Add a Comment</button>
+            </div>
+
+            <div class="question-bubble">
+                <p><strong>Emily:</strong> Any advice on how to manage a full course load with a part-time job?</p>
+                <div class="comments">
+                    <p><strong>Mark:</strong> Create a strict schedule, and make sure to block time for self-care!</p>
+                </div>
+                <button onclick="addComment(this)">Add a Comment</button>
+            </div>
         </div>
     </section>
-
-    <!-- Floating login button -->
-    <div class="floating-login">
-        <button onclick="location.href='login.html';">Login</button>
-    </div>
 
     <footer>
         <p>&copy; 2024 CollegeXchange</p>
@@ -62,18 +76,15 @@
                 newQuestion.className = "question-bubble";
 
                 newQuestion.innerHTML = `
-                    <p>${questionContent}</p>
-                    <button onclick="addComment(this)">Add a Comment</button>
+                    <p><strong>You:</strong> ${questionContent}</p>
                     <div class="comments"></div>
+                    <button onclick="addComment(this)">Add a Comment</button>
                 `;
 
-                // Append the question to the container
                 questionContainer.prepend(newQuestion);
 
-                // Clear the input field after posting
+                // Clear input field
                 document.getElementById('questionContent').value = '';
-            } else {
-                alert("Please enter a question or suggestion.");
             }
         }
 
@@ -81,14 +92,9 @@
             var commentText = prompt("Enter your comment:");
 
             if (commentText.trim() !== "") {
-                var commentContainer = button.nextElementSibling;
-
-                // Create a new comment div
-                var newComment = document.createElement('div');
-                newComment.className = "comment-bubble";
-                newComment.innerHTML = `<p>${commentText}</p>`;
-
-                // Append the comment to the comment container
+                var commentContainer = button.previousElementSibling;
+                var newComment = document.createElement('p');
+                newComment.innerHTML = `<strong>You:</strong> ${commentText}`;
                 commentContainer.appendChild(newComment);
             }
         }
