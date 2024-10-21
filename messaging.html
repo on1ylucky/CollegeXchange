@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeXchange - Messaging Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="messaging.html">Messaging Platform</a></li>
+            </ul>
+        </nav>
+        <h1>Messaging Platform</h1>
+    </header>
+
+    <section>
+        <h2>Connect with Alumni and Peers</h2>
+        <p>Start conversations with alumni or peers to get advice on college life, coursework, or career tips.</p>
+
+        <!-- Example of a chat window -->
+        <div class="chat-window" id="chat-window">
+            <h3>Chat with John Doe (Alumni)</h3>
+            <p><strong>John:</strong> Hi! How can I help you with your career plans?</p>
+        </div>
+
+        <input type="text" id="messageInput" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CollegeXchange</p>
+    </footer>
+
+    <script>
+        // Function to send a message
+        function sendMessage() {
+            var messageInput = document.getElementById('messageInput').value;
+
+            // Check if input is not empty
+            if (messageInput.trim() !== "") {
+                var chatWindow = document.getElementById('chat-window');
+
+                // Create a new paragraph element for the user's message
+                var newMessage = document.createElement('p');
+                newMessage.innerHTML = "<strong>You:</strong> " + messageInput;
+
+                // Append the new message to the chat window
+                chatWindow.appendChild(newMessage);
+
+                // Clear the input field after sending
+                document.getElementById('messageInput').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
