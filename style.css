@@ -74,11 +74,6 @@ nav ul li a:hover {
 }
 
 /* Right-side login button */
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
 .nav-right button {
     background-color: #6DA6E0; /* Same blue as other buttons */
     color: white;
@@ -157,6 +152,174 @@ button:hover {
     background-color: #ADDFFF;
     color: #3E4A89;
     transform: scale(1.05);
+}
+
+/* Marketplace Items */
+.item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.item img {
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.item button {
+    background-color: #FFD700;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.item button:hover {
+    background-color: #FFA500;
+    transform: scale(1.05);
+}
+
+/* Chat Window Styling (Messaging Page) */
+.message-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-list {
+    width: 30%;
+    background-color: #F0F0F0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    padding: 10px 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.contact-list li:hover {
+    color: #3E4A89;
+    font-weight: bold;
+}
+
+.chat-window {
+    width: 65%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#chatMessages {
+    margin-bottom: 20px;
+}
+
+/* Community Posts and Comments (Suggestions Page) */
+.question-bubble {
+    background-color: #F0F0F0;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comments {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.comments p {
+    font-size: 1rem;
+}
+
+.question-bubble button {
+    margin-top: 10px;
+    background-color: #FFD700;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.question-bubble button:hover {
+    background-color: #FFA500;
+    transform: scale(1.05);
+}
+
+/* Profile Section Styling */
+.profile-section {
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    max-width: 1000px;
+}
+
+.profile-details {
+    display: flex;
+    align-items: flex-start;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info {
+    text-align: left;
+}
+
+.profile-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Profile Posts Section */
+.profile-posts {
+    margin-top: 50px;
+}
+
+.profile-posts h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.post {
+    margin-bottom: 30px;
+    background-color: #F0F0F0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.post p {
+    font-size: 1.1rem;
 }
 
 /* Footer Styling */
