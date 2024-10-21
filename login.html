@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeXchange - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="messaging.html">Messages</a></li>
+                <li><a href="suggestions.html">Post a Question</a></li>
+            </ul>
+        </nav>
+        <h1>Login to CollegeXchange</h1>
+    </header>
+
+    <section>
+        <h2>Login with your School Email</h2>
+        <input type="email" id="email" placeholder="School Email" style="width: 50%; padding: 10px; margin-bottom: 10px;">
+        <br>
+        <input type="password" id="password" placeholder="Password" style="width: 50%; padding: 10px; margin-bottom: 10px;">
+        <br>
+        <button onclick="login()">Login</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CollegeXchange</p>
+    </footer>
+
+    <script>
+        // Simulate login and store user information in local storage
+        function login() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (email.trim() && password.trim()) {
+                // Store user information in local storage
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('isLoggedIn', true);
+                
+                // Redirect to the profile page
+                window.location.href = "profile.html";
+            } else {
+                alert("Please enter your email and password.");
+            }
+        }
+    </script>
+</body>
+</html>

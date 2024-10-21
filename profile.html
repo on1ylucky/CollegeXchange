@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeXchange - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="messaging.html">Messages</a></li>
+                <li><a href="suggestions.html">Post a Question</a></li>
+            </ul>
+        </nav>
+        <h1>Your Profile</h1>
+    </header>
+
+    <section>
+        <h2>Welcome, <span id="userEmail"></span></h2>
+        <button onclick="logout()">Log Out</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CollegeXchange</p>
+    </footer>
+
+    <script>
+        // Check if the user is logged in
+        function checkLogin() {
+            var isLoggedIn = localStorage.getItem('isLoggedIn');
+            var userEmail = localStorage.getItem('userEmail');
+
+            if (isLoggedIn) {
+                // Display the user's email
+                document.getElementById('userEmail').textContent = userEmail;
+            } else {
+                // Redirect to login page if not logged in
+                window.location.href = "login.html";
+            }
+        }
+
+        // Log out function
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            window.location.href = "login.html";
+        }
+
+        // Run checkLogin on page load
+        window.onload = checkLogin;
+    </script>
+</body>
+</html>
