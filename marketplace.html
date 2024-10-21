@@ -12,8 +12,8 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="messaging.html">Messages</a></li> <!-- Link to messaging.html -->
-                <li><a href="suggestions.html">Post a Question</a></li> <!-- Updated name -->
+                <li><a href="messaging.html">Messages</a></li>
+                <li><a href="suggestions.html">Post a Question</a></li>
             </ul>
         </nav>
         <h1>Marketplace</h1>
@@ -21,21 +21,23 @@
     </header>
 
     <section>
+        <h2>Post a New Item</h2>
+        <!-- Form to create a new post -->
+        <input type="text" id="username" placeholder="Your Name" style="width: 30%; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+        <br>
+        <input type="text" id="itemName" placeholder="Item Name" style="width: 30%; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+        <br>
+        <input type="file" id="itemImage" accept="image/*" style="margin-bottom: 10px;">
+        <br>
+        <textarea id="itemDescription" placeholder="Item Description" rows="4" style="width: 30%; padding: 10px; border-radius: 5px;"></textarea>
+        <br>
+        <button onclick="postItem()">Post Item</button>
+    </section>
+
+    <section>
         <h2>Available Items</h2>
-        <!-- Example of an item for sale -->
-        <div class="item-for-sale">
-            <h3>Textbook: "Introduction to Algorithms"</h3>
-            <p>Condition: Like new</p>
-            <p>Price: $50</p>
-            <button onclick="buyItem()">Buy Now</button>
-        </div>
-        
-        <!-- Example of another item -->
-        <div class="item-for-sale">
-            <h3>iPad: 6th Generation (32GB)</h3>
-            <p>Condition: Slightly used</p>
-            <p>Price: $180</p>
-            <button onclick="buyItem()">Buy Now</button>
+        <div id="itemContainer">
+            <!-- Items will appear here -->
         </div>
     </section>
 
@@ -44,9 +46,67 @@
     </footer>
 
     <script>
-        // Simulate buying an item
-        function buyItem() {
-            alert("Thank you for your purchase!");
+        function postItem() {
+            var username = document.getElementById('username').value;
+            var itemName = document.getElementById('itemName').value;
+            var itemImage = document.getElementById('itemImage').files[0];
+            var itemDescription = document.getElementById('itemDescription').value;
+
+            if (username && itemName && itemImage && itemDescription) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var itemContainer = document.getElementById('itemContainer');
+
+                    // Create a new item div
+                    var newItem = document.createElement('div');
+                    newItem.className = "item";
+
+                    // Set the innerHTML for the item including the image, description, and profile
+                    newItem.innerHTML = `
+                        <h3>${itemName} by ${username}</h3>
+                        <img src="${e.target.result}" alt="${itemName}" style="width: 200px; height: 200px; object-fit: cover;">
+                        <p>${itemDescription}</p>
+                        <input type="text" placeholder="Add a comment..." class="comment-input">
+                        <button onclick="addComment(this)">Comment</button>
+                        <div class="comments"></div>
+                    `;
+
+                    // Append the new item to the container
+                    itemContainer.prepend(newItem);
+
+                    // Clear the form after posting
+                    document.getElementById('username').value = "";
+                    document.getElementById('itemName').value = "";
+                    document.getElementById('itemImage').value = "";
+                    document.getElementById('itemDescription').value = "";
+                };
+
+                // Read the uploaded image file and call the reader.onload function
+                reader.readAsDataURL(itemImage);
+            } else {
+                alert("Please fill out all fields.");
+            }
+        }
+
+        // Function to add a comment to the item
+        function addComment(button) {
+            var commentInput = button.previousElementSibling;
+            var commentText = commentInput.value;
+
+            if (commentText.trim() !== "") {
+                var commentsContainer = button.nextElementSibling;
+
+                // Create a new comment div
+                var newComment = document.createElement('div');
+                newComment.className = "comment";
+                newComment.innerText = commentText;
+
+                // Append the comment
+                commentsContainer.appendChild(newComment);
+
+                // Clear the input field
+                commentInput.value = "";
+            }
         }
     </script>
 </body>
