@@ -12,28 +12,53 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="messaging.html">Messages</a></li> <!-- Link to messaging.html -->
-                <li><a href="suggestions.html">Post a Question</a></li> <!-- Updated name -->
+                <li><a href="messaging.html">Messages</a></li>
+                <li><a href="suggestions.html">Post a Question</a></li>
             </ul>
         </nav>
         <h1>Welcome to CollegeXchange</h1>
         <p>Your go-to platform for reselling and networking with students and alumni</p>
     </header>
 
-    <section>
-        <h2>Our Mission</h2>
-        <p>We aim to help college students save money and build connections by providing a platform to resell items and network with alumni.</p>
-    </section>
+    <section style="display: flex; justify-content: space-between;">
+        <!-- Main Content Area -->
+        <div style="width: 60%;">
+            <h2>Our Mission</h2>
+            <p>We aim to help college students save money and build connections by providing a platform to resell items and network with alumni.</p>
+        </div>
 
-    <section>
-        <h2>Explore Our Features</h2>
-        <p>Visit the <a href="marketplace.html">Marketplace</a> to buy, sell, or give away items.</p>
-        <p>Use the <a href="messaging.html">Messages</a> to connect with alumni and peers.</p> <!-- Link to messaging.html -->
-        <p>Ask for advice on professors for specific classes in our <a href="suggestions.html">Post a Question</a> section.</p> <!-- Updated name -->
+        <!-- Sidebar Login Area -->
+        <div class="login-area">
+            <h2>Login</h2>
+            <input type="email" id="email" placeholder="School Email" style="width: 90%; padding: 10px; margin-bottom: 10px;">
+            <br>
+            <input type="password" id="password" placeholder="Password" style="width: 90%; padding: 10px; margin-bottom: 10px;">
+            <br>
+            <button onclick="login()">Login</button>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 CollegeXchange</p>
     </footer>
+
+    <script>
+        // Simulate login and store user information in local storage
+        function login() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (email.trim() && password.trim()) {
+                // Store user information in local storage
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('isLoggedIn', true);
+                
+                // Redirect to the profile page
+                window.location.href = "profile.html";
+            } else {
+                alert("Please enter your email and password.");
+            }
+        }
+    </script>
 </body>
 </html>
