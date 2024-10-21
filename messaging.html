@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CollegeXchange - Messaging Platform</title>
+    <title>CollegeXchange - Messages</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,10 +12,11 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="messaging.html">Messaging Platform</a></li>
+                <li><a href="messages.html">Messages</a></li> <!-- Updated name -->
+                <li><a href="suggestions.html">Post a Question</a></li> <!-- Updated name -->
             </ul>
         </nav>
-        <h1>Messaging Platform</h1>
+        <h1>Messages</h1> <!-- Updated name -->
     </header>
 
     <section>
@@ -33,29 +34,4 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 CollegeXchange</p>
-    </footer>
-
-    <script>
-        // Function to send a message
-        function sendMessage() {
-            var messageInput = document.getElementById('messageInput').value;
-
-            // Check if input is not empty
-            if (messageInput.trim() !== "") {
-                var chatWindow = document.getElementById('chat-window');
-
-                // Create a new paragraph element for the user's message
-                var newMessage = document.createElement('p');
-                newMessage.innerHTML = "<strong>You:</strong> " + messageInput;
-
-                // Append the new message to the chat window
-                chatWindow.appendChild(newMessage);
-
-                // Clear the input field after sending
-                document.getElementById('messageInput').value = '';
-            }
-        }
-    </script>
-</body>
-</html>
+        <p>&copy; 2024
