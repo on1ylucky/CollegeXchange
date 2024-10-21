@@ -1,22 +1,22 @@
 /* General Page Styling */
 body {
-    font-family: 'Poppins', sans-serif; /* Clean, modern font */
-    background-color: #ADDFFF; /* Light blue background for a fresh look */
+    font-family: 'Poppins', sans-serif;
+    background-color: #ADDFFF;
     margin: 0;
     padding: 0;
-    color: #333; /* Default text color */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    color: #333;
+    overflow-x: hidden;
 }
 
 /* Header Styling */
 header {
-    background-color: #3E4A89; /* Dark blue header for contrast */
+    background-color: #3E4A89;
     color: white;
     padding: 40px 0;
     text-align: center;
-    border-bottom-left-radius: 50px; /* Rounded edges for a fun, playful look */
+    border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
@@ -26,9 +26,11 @@ header h1 {
     letter-spacing: 2px;
 }
 
+/* Lighter color for tagline */
 header p {
     font-size: 1.2rem;
     margin-top: 10px;
+    color: #f0f0f0; /* Lighter color similar to white */
 }
 
 /* Navigation Menu */
@@ -37,7 +39,7 @@ nav ul {
     padding: 0;
     margin: 20px 0 0;
     display: flex;
-    justify-content: center; /* Center the navigation links */
+    justify-content: center;
 }
 
 nav ul li {
@@ -50,15 +52,15 @@ nav ul li a {
     font-weight: bold;
     font-size: 1.1rem;
     padding: 10px 20px;
-    background-color: #6DA6E0; /* Light blue for navigation buttons */
+    background-color: #6DA6E0;
     border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #ADDFFF; /* Hover effect for nav links */
+    background-color: #ADDFFF;
     color: #3E4A89;
-    transform: scale(1.1); /* Slight hover effect for interactivity */
+    transform: scale(1.1);
 }
 
 /* Section Styling */
@@ -66,11 +68,11 @@ section {
     margin: 50px auto;
     padding: 30px;
     background-color: white;
-    border-radius: 25px; /* Rounded corners */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 25px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
     width: 85%;
     max-width: 1200px;
-    text-align: center; /* Center content */
+    text-align: center;
 }
 
 /* Section Titles */
@@ -88,106 +90,39 @@ p {
     margin-bottom: 20px;
 }
 
-/* Buttons */
+/* Add spacing between title and buttons */
+header h1 {
+    margin-bottom: 30px; /* Space between title and buttons */
+}
+
+/* Add spacing between buttons */
 button {
-    background-color: #FFD700; /* Fun yellow color for buttons */
+    background-color: #FFD700;
     color: white;
     border: none;
     padding: 15px 30px;
-    border-radius: 25px; /* Rounded buttons for a friendly look */
+    border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
     font-size: 1rem;
+    margin-top: 20px; /* Add space between buttons and other elements */
+    margin-right: 10px; /* Space between buttons */
     transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #FFA500; /* Orange on hover */
-    transform: scale(1.05); /* Slight scale effect on hover */
+    background-color: #FFA500;
+    transform: scale(1.05);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #3E4A89; /* Footer matches header */
-    color: white;
+    background-color: #3E4A89;
+    color: #f0f0f0; /* Lighter color for footer text */
     position: relative;
     bottom: 0;
     width: 100%;
-    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1); /* Floating effect for footer */
-}
-
-/* Marketplace Item Styling */
-.item-for-sale {
-    background-color: #f0f8ff; /* Light blue item background */
-    padding: 20px;
-    margin: 15px 0;
-    border: 2px solid #3E4A89; /* Dark blue border */
-    border-radius: 20px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: box-shadow 0.3s ease;
-}
-
-.item-for-sale:hover {
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Elevation effect on hover */
-}
-
-/* Messaging/Chat Window Styling */
-.chat-window {
-    background-color: #f0f8ff;
-    padding: 20px;
-    margin: 15px 0;
-    border: 2px solid #3E4A89;
-    border-radius: 20px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Text Input for Chat */
-input[type="text"] {
-    width: 80%;
-    padding: 15px;
-    margin-top: 10px;
-    margin-right: 5px;
-    border-radius: 20px;
-    border: 2px solid #ADDFFF;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus {
-    outline: none;
-    border-color: #3E4A89; /* Dark blue on focus */
-}
-
-/* Reddit-Style Posting Area (Tips & Tricks) */
-.post {
-    background-color: #f9f9f9; /* Light background for posts */
-    padding: 20px;
-    margin: 20px 0;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: box-shadow 0.3s ease;
-}
-
-.post:hover {
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Elevation effect */
-}
-
-/* Textarea for posting tips */
-textarea {
-    font-size: 1rem;
-    padding: 15px;
-    border-radius: 15px;
-    border: 2px solid #ADDFFF;
-    width: 80%;
-    margin-bottom: 20px;
-    transition: border-color 0.3s ease;
-}
-
-textarea:focus {
-    outline: none;
-    border-color: #3E4A89;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
 }
