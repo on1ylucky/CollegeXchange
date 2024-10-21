@@ -9,24 +9,28 @@
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <h1>CollegeXchange</h1> <!-- Logo on the left side -->
-            </div>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="messaging.html">Messages</a></li>
-                    <li><a href="suggestions.html">Post a Question</a></li>
-                </ul>
-                <!-- Profile button at the far right -->
-                <div class="profile-button">
-                    <button onclick="location.href='profile.html';">Profile</button> <!-- Profile button instead of icon -->
+            <div class="nav-container">
+                <!-- Left-aligned navigation buttons -->
+                <div class="nav-left">
+                    <div class="logo">
+                        <h1>CollegeXchange</h1>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="messaging.html">Messages</a></li>
+                        <li><a href="suggestions.html">Post a Question</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+
+                <!-- Right-aligned login button -->
+                <div class="nav-right">
+                    <button onclick="location.href='login.html';">Login</button>
                 </div>
             </div>
         </nav>
     </header>
-
 
     <section>
         <h2>Welcome to CollegeXchange</h2>
@@ -34,17 +38,8 @@
         <p>We help students buy, sell, and give away items, and connect with others for advice on college life!</p>
     </section>
 
-    <!-- Floating login button -->
-    <div class="floating-login">
-        <button onclick="location.href='login.html';">Login</button>
-    </div>
-
     <footer>
         <p>&copy; 2024 CollegeXchange</p>
     </footer>
-
-    <script>
-        // Optional JavaScript for functionality on this page
-    </script>
 </body>
 </html>
