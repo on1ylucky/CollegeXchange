@@ -12,30 +12,23 @@ body {
 header {
     background-color: #3E4A89;
     color: white;
-    padding: 20px 0;
+    padding: 10px 0; /* Reduced padding to fit everything on one line */
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Space between logo and buttons */
     align-items: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: flex-end; /* Align everything to the right */
     width: 90%;
     max-width: 1200px;
-    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Left-side (Logo) - remains on the left */
+/* Logo Styling */
 .logo {
-    margin-right: auto;
-    color: white;
-    font-size: 2rem;
-    letter-spacing: 2px;
+    font-size: 1.5rem; /* Adjusted font size for the logo */
+    letter-spacing: 1px;
     text-transform: uppercase;
+    color: white;
+    margin-right: 20px; /* Space between logo and buttons */
 }
 
 /* Navigation Bar Styling */
@@ -44,7 +37,7 @@ nav ul {
     display: flex;
     padding: 0;
     margin: 0;
-    gap: 20px; /* Space between buttons */
+    gap: 10px; /* Space between buttons */
 }
 
 nav ul li {
@@ -55,13 +48,12 @@ nav ul li a, .nav-right button {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1rem;
-    padding: 10px 30px; /* Uniform button size */
-    background-color: #6DA6E0; /* Uniform blue color for all buttons */
+    font-size: 0.9rem; /* Uniform font size */
+    padding: 8px 20px; /* Uniform padding for buttons */
+    background-color: #6DA6E0; /* Uniform blue color */
     border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     display: inline-block;
-    width: 150px; /* Fixed width for all buttons to be uniform */
     text-align: center;
 }
 
@@ -77,15 +69,13 @@ nav ul li a:hover, .nav-right button:hover {
     color: white;
     border: none;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    padding: 8px 20px; /* Same padding as other buttons */
+    border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-right button:hover {
-    background-color: #ADDFFF;
-    color: #3E4A89;
-    transform: scale(1.05);
+    display: inline-block;
+    text-align: center;
 }
 
 /* Section Styling */
