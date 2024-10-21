@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CollegeXchange - Messages</title>
+    <title>CollegeXchange - Post a Question</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,25 +12,26 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="messaging.html">Messages</a></li> <!-- This links to the current page -->
-                <li><a href="suggestions.html">Post a Question</a></li> <!-- Updated name -->
+                <li><a href="messaging.html">Messages</a></li> <!-- Link to messaging.html -->
+                <li><a href="suggestions.html">Post a Question</a></li>
             </ul>
         </nav>
-        <h1>Messages</h1> <!-- Updated to "Messages" -->
+        <h1>Post a Question</h1>
+        <p>Ask for advice on professors for specific classes and share your suggestions with others.</p>
     </header>
 
     <section>
-        <h2>Connect with Alumni and Peers</h2>
-        <p>Start conversations with alumni or peers to get advice on college life, coursework, or career tips.</p>
+        <h2>Post a Question</h2>
+        <textarea id="questionContent" placeholder="Ask about a professor for a specific class..." rows="4" style="width:80%; padding:10px; border-radius:10px;"></textarea>
+        <br><br>
+        <button onclick="postQuestion()">Submit Question</button>
+    </section>
 
-        <!-- Example of a chat window -->
-        <div class="chat-window" id="chat-window">
-            <h3>Chat with John Doe (Alumni)</h3>
-            <p><strong>John:</strong> Hi! How can I help you with your career plans?</p>
+    <section>
+        <h2>Questions and Suggestions</h2>
+        <div id="questionContainer">
+            <!-- Questions and suggestions will appear here -->
         </div>
-
-        <input type="text" id="messageInput" placeholder="Type your message..." style="width: 80%; padding: 10px; margin-top: 10px; border-radius: 10px;">
-        <button onclick="sendMessage()">Send</button>
     </section>
 
     <footer>
@@ -38,21 +39,41 @@
     </footer>
 
     <script>
-        function sendMessage() {
-            var messageInput = document.getElementById('messageInput').value;
+        function postQuestion() {
+            var questionContent = document.getElementById('questionContent').value;
 
-            if (messageInput.trim() !== "") {
-                var chatWindow = document.getElementById('chat-window');
+            if (questionContent.trim() !== "") {
+                var questionContainer = document.getElementById('questionContainer');
 
-                // Create a new paragraph element for the user's message
-                var newMessage = document.createElement('p');
-                newMessage.innerHTML = "<strong>You:</strong> " + messageInput;
+                // Create a new div to hold the question and responses
+                var newQuestion = document.createElement('div');
+                newQuestion.className = "question-bubble";
 
-                // Append the new message to the chat window
-                chatWindow.appendChild(newMessage);
+                // Add the question content to the new div
+                newQuestion.innerHTML = `<p>${questionContent}</p><button onclick="addSuggestion(this)">Add a Suggestion</button><div class="suggestionContainer"></div>`;
 
-                // Clear the input field after sending
-                document.getElementById('messageInput').value = '';
+                // Append the question to the question container
+                questionContainer.prepend(newQuestion);
+
+                // Clear the input field
+                document.getElementById('questionContent').value = "";
+            }
+        }
+
+        function addSuggestion(questionElement) {
+            // Create a new text area for the suggestion
+            var suggestionContent = prompt("Enter your suggestion:");
+
+            if (suggestionContent) {
+                var suggestionContainer = questionElement.nextElementSibling;
+
+                // Create a new suggestion div
+                var newSuggestion = document.createElement('div');
+                newSuggestion.className = "suggestion-bubble";
+                newSuggestion.innerHTML = `<p>${suggestionContent}</p>`;
+
+                // Append the suggestion to the suggestion container
+                suggestionContainer.appendChild(newSuggestion);
             }
         }
     </script>
