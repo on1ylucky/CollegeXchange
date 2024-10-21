@@ -9,27 +9,32 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="messaging.html">Messages</a></li>
-                <li><a href="suggestions.html">Post a Question</a></li>
-            </ul>
+            <div class="logo">
+                <h1>CollegeXchange</h1> <!-- Logo on the left side -->
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="messaging.html">Messages</a></li>
+                    <li><a href="suggestions.html">Post a Question</a></li>
+                </ul>
+                <!-- Profile icon at the far right -->
+                <div class="profile-icon">
+                    <a href="profile.html"><img src="person-icon.png" alt="Profile" style="width: 30px;"></a>
+                </div>
+            </div>
         </nav>
-        <h1>Marketplace</h1>
-        <p>Buy, sell, or give away items to fellow students. Save money and reduce waste!</p>
     </header>
 
     <section>
         <h2>Post a New Item</h2>
         <!-- Form to create a new post -->
-        <input type="text" id="username" placeholder="Your Name" style="width: 30%; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+        <input type="text" id="itemName" placeholder="Item Name" style="width: 30%; padding: 10px;">
         <br>
-        <input type="text" id="itemName" placeholder="Item Name" style="width: 30%; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+        <input type="file" id="itemImage" accept="image/*" style="margin-top: 10px;">
         <br>
-        <input type="file" id="itemImage" accept="image/*" style="margin-bottom: 10px;">
-        <br>
-        <textarea id="itemDescription" placeholder="Item Description" rows="4" style="width: 30%; padding: 10px; border-radius: 5px;"></textarea>
+        <textarea id="itemDescription" placeholder="Item Description" rows="4" style="width: 30%; padding: 10px;"></textarea>
         <br>
         <button onclick="postItem()">Post Item</button>
     </section>
@@ -37,9 +42,14 @@
     <section>
         <h2>Available Items</h2>
         <div id="itemContainer">
-            <!-- Items will appear here -->
+            <!-- Items will appear here dynamically after being posted -->
         </div>
     </section>
+
+    <!-- Floating login button -->
+    <div class="floating-login">
+        <button onclick="location.href='login.html';">Login</button>
+    </div>
 
     <footer>
         <p>&copy; 2024 CollegeXchange</p>
@@ -47,12 +57,12 @@
 
     <script>
         function postItem() {
-            var username = document.getElementById('username').value;
             var itemName = document.getElementById('itemName').value;
             var itemImage = document.getElementById('itemImage').files[0];
             var itemDescription = document.getElementById('itemDescription').value;
+            var userEmail = localStorage.getItem('userEmail');
 
-            if (username && itemName && itemImage && itemDescription) {
+            if (itemName && itemImage && itemDescription && userEmail) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     var itemContainer = document.getElementById('itemContainer');
@@ -61,51 +71,32 @@
                     var newItem = document.createElement('div');
                     newItem.className = "item";
 
-                    // Set the innerHTML for the item including the image, description, and profile
                     newItem.innerHTML = `
-                        <h3>${itemName} by ${username}</h3>
-                        <img src="${e.target.result}" alt="${itemName}" style="width: 200px; height: 200px; object-fit: cover;">
+                        <h3>${itemName} by ${userEmail}</h3>
+                        <img src="${e.target.result}" alt="${itemName}" style="width: 200px; height: 200px;">
                         <p>${itemDescription}</p>
-                        <input type="text" placeholder="Add a comment..." class="comment-input">
-                        <button onclick="addComment(this)">Comment</button>
-                        <div class="comments"></div>
                     `;
 
-                    // Append the new item to the container
                     itemContainer.prepend(newItem);
 
-                    // Clear the form after posting
-                    document.getElementById('username').value = "";
+                    // Clear form
                     document.getElementById('itemName').value = "";
                     document.getElementById('itemImage').value = "";
                     document.getElementById('itemDescription').value = "";
                 };
 
-                // Read the uploaded image file and call the reader.onload function
                 reader.readAsDataURL(itemImage);
             } else {
                 alert("Please fill out all fields.");
             }
         }
 
-        // Function to add a comment to the item
-        function addComment(button) {
-            var commentInput = button.previousElementSibling;
-            var commentText = commentInput.value;
-
-            if (commentText.trim() !== "") {
-                var commentsContainer = button.nextElementSibling;
-
-                // Create a new comment div
-                var newComment = document.createElement('div');
-                newComment.className = "comment";
-                newComment.innerText = commentText;
-
-                // Append the comment
-                commentsContainer.appendChild(newComment);
-
-                // Clear the input field
-                commentInput.value = "";
+        // Ensure user is logged in before posting an item
+        window.onload = function() {
+            var isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn) {
+                alert("Please log in to post an item.");
+                window.location.href = "login.html";
             }
         }
     </script>
