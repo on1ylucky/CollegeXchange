@@ -10,13 +10,13 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #3E4A89;
+    background-color: #3E4A89; /* Dark blue header */
     color: white;
     padding: 40px 0;
     text-align: center;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
 }
 
 header h1 {
@@ -26,11 +26,11 @@ header h1 {
     letter-spacing: 2px;
 }
 
-/* Lighter color for tagline */
+/* Adjusted Text for Subtitle */
 header p {
     font-size: 1.2rem;
     margin-top: 10px;
-    color: #f0f0f0; /* Lighter color similar to white */
+    color: #f0f8ff; /* Lightened to a closer-to-white color */
 }
 
 /* Navigation Menu */
@@ -75,27 +75,21 @@ section {
     text-align: center;
 }
 
-/* Section Titles */
+/* Title Spacing */
 h2 {
     color: #3E4A89;
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Increased bottom margin for better spacing */
 }
 
-/* Paragraphs */
 p {
     font-size: 1.2rem;
     color: #555;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Add more space between text and buttons */
 }
 
-/* Add spacing between title and buttons */
-header h1 {
-    margin-bottom: 30px; /* Space between title and buttons */
-}
-
-/* Add spacing between buttons */
+/* Buttons */
 button {
     background-color: #FFD700;
     color: white;
@@ -105,8 +99,7 @@ button {
     cursor: pointer;
     font-weight: bold;
     font-size: 1rem;
-    margin-top: 20px; /* Add space between buttons and other elements */
-    margin-right: 10px; /* Space between buttons */
+    margin: 10px; /* Add spacing between buttons */
     transition: all 0.3s ease;
 }
 
@@ -120,9 +113,83 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #3E4A89;
-    color: #f0f0f0; /* Lighter color for footer text */
+    color: #f0f8ff; /* Lightened footer text to closer-to-white */
     position: relative;
     bottom: 0;
     width: 100%;
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Marketplace Item Styling */
+.item-for-sale {
+    background-color: #f0f8ff;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #3E4A89;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.item-for-sale:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Messaging/Chat Window Styling */
+.chat-window {
+    background-color: #f0f8ff;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #3E4A89;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Input for Chat */
+input[type="text"] {
+    width: 80%;
+    padding: 15px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border-radius: 20px;
+    border: 2px solid #ADDFFF;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3E4A89;
+}
+
+/* Reddit-Style Posting Area (Tips & Tricks) */
+.post {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: box-shadow 0.3s ease;
+}
+
+.post:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Textarea for posting tips */
+textarea {
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid #ADDFFF;
+    width: 80%;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3E4A89;
 }
