@@ -33,6 +33,7 @@ header {
 .nav-left {
     display: flex;
     align-items: center;
+    gap: 30px; /* Add space between logo and navigation buttons */
 }
 
 /* Logo Styling */
@@ -48,12 +49,13 @@ header {
 nav ul {
     list-style: none;
     display: flex;
+    gap: 20px; /* Add spacing between navigation buttons */
     padding: 0;
     margin: 0;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0;
 }
 
 nav ul li a {
@@ -61,7 +63,7 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
-    padding: 10px 20px;
+    padding: 10px 30px; /* Increase padding for better spacing */
     background-color: #6DA6E0; /* Uniform blue color for all buttons */
     border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -74,11 +76,15 @@ nav ul li a:hover {
 }
 
 /* Right-side login button */
+.nav-right {
+    margin-left: auto;
+}
+
 .nav-right button {
     background-color: #6DA6E0; /* Same blue as other buttons */
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 30px; /* Increased padding for better spacing */
     border-radius: 25px;
     font-weight: bold;
     font-size: 1rem;
