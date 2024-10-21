@@ -1,93 +1,193 @@
+/* General Page Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif; /* Clean, modern font */
+    background-color: #ADDFFF; /* Light blue background for a fresh look */
     margin: 0;
     padding: 0;
+    color: #333; /* Default text color */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Header Styling */
 header {
-    background-color: #3E4A89;
+    background-color: #3E4A89; /* Dark blue header for contrast */
     color: white;
-    padding: 20px;
+    padding: 40px 0;
     text-align: center;
+    border-bottom-left-radius: 50px; /* Rounded edges for a fun, playful look */
+    border-bottom-right-radius: 50px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
 }
 
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Navigation Menu */
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center; /* Center the navigation links */
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    background-color: #6DA6E0; /* Light blue for navigation buttons */
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #ADDFFF; /* Hover effect for nav links */
+    color: #3E4A89;
+    transform: scale(1.1); /* Slight hover effect for interactivity */
 }
 
+/* Section Styling */
 section {
-    margin: 20px;
-    padding: 10px;
+    margin: 50px auto;
+    padding: 30px;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 85%;
+    max-width: 1200px;
+    text-align: center; /* Center content */
 }
 
+/* Section Titles */
 h2 {
     color: #3E4A89;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
+/* Paragraphs */
+p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
 button {
-    background-color: #6DA6E0;
+    background-color: #FFD700; /* Fun yellow color for buttons */
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 15px 30px;
+    border-radius: 25px; /* Rounded buttons for a friendly look */
     cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #3E4A89;
+    background-color: #FFA500; /* Orange on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
 }
 
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #3E4A89;
+    padding: 20px;
+    background-color: #3E4A89; /* Footer matches header */
     color: white;
-    position: fixed;
-    width: 100%;
+    position: relative;
     bottom: 0;
+    width: 100%;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1); /* Floating effect for footer */
 }
 
-/* Marketplace Item */
+/* Marketplace Item Styling */
 .item-for-sale {
-    background-color: #f9f9f9;
-    padding: 15px;
+    background-color: #f0f8ff; /* Light blue item background */
+    padding: 20px;
     margin: 15px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 2px solid #3E4A89; /* Dark blue border */
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: box-shadow 0.3s ease;
 }
 
-/* Chat Window */
+.item-for-sale:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Elevation effect on hover */
+}
+
+/* Messaging/Chat Window Styling */
 .chat-window {
-    background-color: #f9f9f9;
-    padding: 15px;
+    background-color: #f0f8ff;
+    padding: 20px;
     margin: 15px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 2px solid #3E4A89;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Text Input for Chat */
 input[type="text"] {
     width: 80%;
-    padding: 10px;
+    padding: 15px;
     margin-top: 10px;
     margin-right: 5px;
+    border-radius: 20px;
+    border: 2px solid #ADDFFF;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3E4A89; /* Dark blue on focus */
+}
+
+/* Reddit-Style Posting Area (Tips & Tricks) */
+.post {
+    background-color: #f9f9f9; /* Light background for posts */
+    padding: 20px;
+    margin: 20px 0;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: box-shadow 0.3s ease;
+}
+
+.post:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Elevation effect */
+}
+
+/* Textarea for posting tips */
+textarea {
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid #ADDFFF;
+    width: 80%;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3E4A89;
 }
