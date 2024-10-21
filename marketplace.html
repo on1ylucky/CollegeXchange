@@ -10,7 +10,7 @@
     <header>
         <nav>
             <div class="logo">
-                <h1>CollegeXchange</h1> <!-- Logo on the left side -->
+                <h1>CollegeXchange</h1>
             </div>
             <div class="nav-links">
                 <ul>
@@ -19,9 +19,8 @@
                     <li><a href="messaging.html">Messages</a></li>
                     <li><a href="suggestions.html">Post a Question</a></li>
                 </ul>
-                <!-- Profile icon at the far right -->
-                <div class="profile-icon">
-                    <a href="profile.html"><img src="person-icon.png" alt="Profile" style="width: 30px;"></a>
+                <div class="profile-button">
+                    <button onclick="location.href='profile.html';">Profile</button>
                 </div>
             </div>
         </nav>
@@ -46,7 +45,7 @@
         </div>
     </section>
 
-    <!-- Floating login button -->
+    <!-- Floating login button (optional) -->
     <div class="floating-login">
         <button onclick="location.href='login.html';">Login</button>
     </div>
@@ -60,9 +59,8 @@
             var itemName = document.getElementById('itemName').value;
             var itemImage = document.getElementById('itemImage').files[0];
             var itemDescription = document.getElementById('itemDescription').value;
-            var userEmail = localStorage.getItem('userEmail');
 
-            if (itemName && itemImage && itemDescription && userEmail) {
+            if (itemName && itemImage && itemDescription) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     var itemContainer = document.getElementById('itemContainer');
@@ -72,7 +70,7 @@
                     newItem.className = "item";
 
                     newItem.innerHTML = `
-                        <h3>${itemName} by ${userEmail}</h3>
+                        <h3>${itemName}</h3>
                         <img src="${e.target.result}" alt="${itemName}" style="width: 200px; height: 200px;">
                         <p>${itemDescription}</p>
                     `;
@@ -88,15 +86,6 @@
                 reader.readAsDataURL(itemImage);
             } else {
                 alert("Please fill out all fields.");
-            }
-        }
-
-        // Ensure user is logged in before posting an item
-        window.onload = function() {
-            var isLoggedIn = localStorage.getItem('isLoggedIn');
-            if (!isLoggedIn) {
-                alert("Please log in to post an item.");
-                window.location.href = "login.html";
             }
         }
     </script>
