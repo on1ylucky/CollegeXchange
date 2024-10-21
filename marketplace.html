@@ -12,22 +12,29 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="messaging.html">Messaging Platform</a></li>
+                <li><a href="messages.html">Messages</a></li> <!-- Updated to "Messages" -->
+                <li><a href="suggestions.html">Post a Question</a></li> <!-- Updated to "Post a Question" -->
             </ul>
         </nav>
         <h1>Marketplace</h1>
+        <p>Buy, sell, or give away items to fellow students. Save money and reduce waste!</p>
     </header>
 
     <section>
-        <h2>Buy, Sell, or Give Away Items</h2>
-        <p>Here you can find textbooks, furniture, electronics, and more that other students are selling or giving away.</p>
-        <p>Post your own items to help your fellow students save money and reduce waste!</p>
-
+        <h2>Available Items</h2>
         <!-- Example of an item for sale -->
         <div class="item-for-sale">
             <h3>Textbook: "Introduction to Algorithms"</h3>
             <p>Condition: Like new</p>
             <p>Price: $50</p>
+            <button onclick="buyItem()">Buy Now</button>
+        </div>
+        
+        <!-- Example of another item -->
+        <div class="item-for-sale">
+            <h3>iPad: 6th Generation (32GB)</h3>
+            <p>Condition: Slightly used</p>
+            <p>Price: $180</p>
             <button onclick="buyItem()">Buy Now</button>
         </div>
     </section>
@@ -37,7 +44,7 @@
     </footer>
 
     <script>
-        // Function to simulate buying an item
+        // Simulate buying an item
         function buyItem() {
             alert("Thank you for your purchase!");
         }
