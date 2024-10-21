@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeXchange - Professor Suggestions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="messaging.html">Messaging Platform</a></li>
+                <li><a href="suggestions.html">Professor Suggestions</a></li>
+            </ul>
+        </nav>
+        <h1>Professor Suggestions</h1>
+        <p>Ask for advice on professors for specific classes and share your suggestions with others.</p>
+    </header>
+
+    <section>
+        <h2>Post a Question</h2>
+        <textarea id="questionContent" placeholder="Ask about a professor for a specific class..." rows="4" style="width:80%; padding:10px; border-radius:10px;"></textarea>
+        <br><br>
+        <button onclick="postQuestion()">Submit Question</button>
+    </section>
+
+    <section>
+        <h2>Questions and Suggestions</h2>
+        <div id="questionContainer">
+            <!-- Questions and suggestions will appear here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CollegeXchange</p>
+    </footer>
+
+    <script>
+        function postQuestion() {
+            var questionContent = document.getElementById('questionContent').value;
+
+            if (questionContent.trim() !== "") {
+                var questionContainer = document.getElementById('questionContainer');
+
+                // Create a new div to hold the question and responses
+                var newQuestion = document.createElement('div');
+                newQuestion.className = "question-bubble";
+
+                // Add the question content to the new div
+                newQuestion.innerHTML = `<p>${questionContent}</p><button onclick="addSuggestion(this)">Add a Suggestion</button><div class="suggestionContainer"></div>`;
+
+                // Append the question to the question container
+                questionContainer.prepend(newQuestion);
+
+                // Clear the input field
+                document.getElementById('questionContent').value = "";
+            }
+        }
+
+        function addSuggestion(questionElement) {
+            // Create a new text area for the suggestion
+            var suggestionContent = prompt("Enter your suggestion:");
+
+            if (suggestionContent) {
+                var suggestionContainer = questionElement.nextElementSibling;
+
+                // Create a new suggestion div
+                var newSuggestion = document.createElement('div');
+                newSuggestion.className = "suggestion-bubble";
+                newSuggestion.innerHTML = `<p>${suggestionContent}</p>`;
+
+                // Append the suggestion to the suggestion container
+                suggestionContainer.appendChild(newSuggestion);
+            }
+        }
+    </script>
+</body>
+</html>
