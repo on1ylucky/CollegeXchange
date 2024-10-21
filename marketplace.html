@@ -9,18 +9,22 @@
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <h1>CollegeXchange</h1>
-            </div>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="messaging.html">Messages</a></li>
-                    <li><a href="suggestions.html">Post a Question</a></li>
-                </ul>
-                <div class="profile-button">
-                    <button onclick="location.href='profile.html';">Profile</button>
+            <div class="nav-container">
+                <div class="nav-left">
+                    <div class="logo">
+                        <h1>CollegeXchange</h1>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="messaging.html">Messages</a></li>
+                        <li><a href="suggestions.html">Post a Question</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-right">
+                    <button onclick="location.href='login.html';">Login</button>
                 </div>
             </div>
         </nav>
@@ -28,7 +32,6 @@
 
     <section>
         <h2>Post a New Item</h2>
-        <!-- Form to create a new post -->
         <input type="text" id="itemName" placeholder="Item Name" style="width: 30%; padding: 10px;">
         <br>
         <input type="file" id="itemImage" accept="image/*" style="margin-top: 10px;">
@@ -41,14 +44,29 @@
     <section>
         <h2>Available Items</h2>
         <div id="itemContainer">
-            <!-- Items will appear here dynamically after being posted -->
+            <!-- Example items -->
+            <div class="item">
+                <h3>Textbook: "Introduction to Algorithms"</h3>
+                <img src="textbook.jpg" alt="Textbook" style="width: 200px; height: 200px;">
+                <p>Price: $50 | Condition: Like new</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="item">
+                <h3>iPad 6th Gen (32GB)</h3>
+                <img src="ipad.jpg" alt="iPad" style="width: 200px; height: 200px;">
+                <p>Price: $180 | Condition: Slightly used</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="item">
+                <h3>Dorm Furniture: Desk and Chair</h3>
+                <img src="furniture.jpg" alt="Furniture" style="width: 200px; height: 200px;">
+                <p>Price: $60 | Condition: Good</p>
+                <button>Buy Now</button>
+            </div>
         </div>
     </section>
-
-    <!-- Floating login button (optional) -->
-    <div class="floating-login">
-        <button onclick="location.href='login.html';">Login</button>
-    </div>
 
     <footer>
         <p>&copy; 2024 CollegeXchange</p>
@@ -73,6 +91,7 @@
                         <h3>${itemName}</h3>
                         <img src="${e.target.result}" alt="${itemName}" style="width: 200px; height: 200px;">
                         <p>${itemDescription}</p>
+                        <button>Buy Now</button>
                     `;
 
                     itemContainer.prepend(newItem);
