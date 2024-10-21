@@ -62,13 +62,13 @@ nav ul li a {
     font-weight: bold;
     font-size: 1.1rem;
     padding: 10px 20px;
-    background-color: #6DA6E0;
+    background-color: #6DA6E0; /* Uniform blue color for all buttons */
     border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #ADDFFF;
+    background-color: #ADDFFF; /* Hover effect */
     color: #3E4A89;
     transform: scale(1.05);
 }
@@ -80,7 +80,7 @@ nav ul li a:hover {
 }
 
 .nav-right button {
-    background-color: #FFD700;
+    background-color: #6DA6E0; /* Same blue as other buttons */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -92,7 +92,8 @@ nav ul li a:hover {
 }
 
 .nav-right button:hover {
-    background-color: #FFA500;
+    background-color: #ADDFFF;
+    color: #3E4A89;
     transform: scale(1.05);
 }
 
@@ -140,7 +141,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 /* Buttons Styling */
 button {
-    background-color: #FFD700;
+    background-color: #6DA6E0;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -153,7 +154,8 @@ button {
 }
 
 button:hover {
-    background-color: #FFA500;
+    background-color: #ADDFFF;
+    color: #3E4A89;
     transform: scale(1.05);
 }
 
