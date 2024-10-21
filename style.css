@@ -19,11 +19,10 @@ header {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Increased margin above and below the title for equal spacing */
 header h1 {
     font-size: 3rem;
-    margin-top: 40px; /* Added spacing above the title */
-    margin-bottom: 40px; /* Spacing below the title */
+    margin-top: 40px;
+    margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -32,7 +31,7 @@ header h1 {
 header p {
     font-size: 1.2rem;
     margin-top: 10px;
-    color: #f0f0f0; /* Lighter color similar to white */
+    color: #f0f0f0;
 }
 
 /* Navigation Menu */
@@ -92,22 +91,67 @@ p {
     margin-bottom: 20px;
 }
 
-/* Add spacing between buttons */
-button {
-    background-color: #FFD700;
+/* Chat Bubble Styling */
+.chat-window {
+    background-color: #f9f9f9; /* Light bubble background */
+    padding: 20px;
+    margin: 15px auto;
+    border-radius: 20px; /* Rounded bubble edges */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    max-width: 800px; /* Max width for the bubble */
+    text-align: left; /* Left align text in chat bubble */
+}
+
+/* Chat input styling */
+input[type="text"] {
+    width: 80%;
+    padding: 15px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border-radius: 20px;
+    border: 2px solid #ADDFFF;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3E4A89;
+}
+
+/* Sold Item Bubble Styling */
+.item-for-sale {
+    background-color: #f0f8ff; /* Light blue item background */
+    padding: 20px;
+    margin: 15px auto;
+    border: 2px solid #3E4A89;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Bubble shadow */
+    max-width: 800px; /* Limit width for consistency */
+    text-align: left; /* Left align content in the bubble */
+}
+
+.item-for-sale h3 {
+    color: #3E4A89; /* Darker color for item titles */
+}
+
+.item-for-sale p {
+    color: #333; /* Darker text for details */
+}
+
+.item-for-sale button {
+    background-color: #FFD700; /* Gold button */
     color: white;
     border: none;
-    padding: 15px 30px;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded button */
     cursor: pointer;
     font-weight: bold;
     font-size: 1rem;
-    margin-top: 20px; /* Add space between buttons and other elements */
-    margin-right: 10px; /* Space between buttons */
     transition: all 0.3s ease;
 }
 
-button:hover {
+.item-for-sale button:hover {
     background-color: #FFA500;
     transform: scale(1.05);
 }
@@ -117,7 +161,7 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #3E4A89;
-    color: white; /* Match the color of the header text */
+    color: white;
     position: relative;
     bottom: 0;
     width: 100%;
